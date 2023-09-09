@@ -11,11 +11,33 @@
 
         <div class="topBar">
             <p class="header">QuestionWizz</p>
-            <a href="/"><p>Home</p></a>
+            <a href="/" style="margin-left: 60vw;"><p>Home</p></a>
             <a href="/login"><p>Login</p></a>
             <a href="/signup"><p>Signup</p></a>
 
         </div>
+
+        <div class="display">
+            <img src="https://cdni.iconscout.com/illustration/premium/thumb/graduation-exam-paper-8304775-6665986.png" alt="">
+            <div class="description">
+            </div>
+        </div>
+
+    </div>
+    <div class="options">
+        
+        <% for(let paper of papers){ %>
+            <a href="/exam/<%= paper.paper_id %>">
+
+                <div class="option">
+                    <p class="paperName"><%= paper.paper_name %></p>
+                    <p class="paperDiff">Difficulty : <%= paper.difficulty %></p>
+                    <p class="questionCount">Number of questions : <%= paper.question_count %></p>
+                    <p class="paperTopics">Topics/Subjects : <%= paper.question_topics %></p>
+                </div>
+
+            </a>
+        <% } %>
     </div>
 
 </body>

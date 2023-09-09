@@ -25,7 +25,16 @@ db.connect(err => {
 
 
 router.get('/' , (req , res) => {
-    res.render('home');
+
+    db.query('SELECT * FROM paper' , (err , results) => {
+
+        if(err){
+            console.log('error in fetching papers'.rainbow , err);
+        }
+        else{
+            res.render('home' , {papers : results});
+        }
+    })
 });
 
 

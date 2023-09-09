@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
 
 body{
@@ -9,17 +9,16 @@ body{
 
 .hero{
     background-color: #5f7ff5;
-    height: 10vw;
-    margin-top: 0vw;
+    height: 40vw;
 }
 
 .topBar{
     display: flex;
     border-bottom: 1px solid #fff7ef;
     font-family: 'Comfortaa';
-    margin: 1vw 0vw 0vw 4vw;
-    padding: 0.5vw;
+    margin: 0vw auto 0vw auto;
     flex-direction: row;
+    width: fit-content;
 }
 
 .topBar a{
@@ -27,7 +26,7 @@ body{
     font-family: 'Comfortaa';
     font-size: 1vw;
     color: #fff7ef;
-    margin: 1vw 1vw 0vw 1vw;
+    margin: 1.5vw 1vw 0vw 1vw;
     font-weight: 500;
 }
 
@@ -35,6 +34,64 @@ body{
 .topBar .header{
     font-family: 'Bungee';
     font-size: 1.3vw;
-    color: #fff7ef;
+    color: #d9ee5f;
     font-weight: 800;
 }
+
+.display{
+    display: flex;
+    flex-direction: row;
+    margin-top: 2vw;
+}
+
+.display img{
+    margin-left: 5vw;
+}
+
+.description{
+    height: 25vw;
+    width: 25vw;
+    border-radius: 30px;
+    background-color: #d9ee5f;
+    margin: 4vw 0vw 0vw 10vw;
+}
+
+.options{
+    display: flex;
+    flex-wrap: wrap;
+    width: 76vw;
+    /* border: 1px solid black; */
+    margin: 2vw auto 10vw auto;
+    height: fit-content;
+}
+
+.options a{
+    text-decoration: none;
+}
+
+.option{
+    width: 30vw;
+    height: 15vw;
+    background-color: #d9ee5f;
+    margin: 2vw 4vw 2vw 4vw;
+    border-radius: 20px;
+    font-family: 'Comfortaa';
+    padding-top: 1vw;
+}
+
+.paperName{
+    font-family: 'Righteous';
+    font-size: 2vw;
+    color: #5f7ff5;
+    font-weight: 900;
+    margin: 2vw 0vw 1vw 2vw;
+}
+
+.paperDiff , .questionCount , .paperTopics{
+    margin: 0vw 0vw 1vw 2vw;
+    font-size: 1vw;
+    font-weight: 800;
+    color: black;
+}
+
+
