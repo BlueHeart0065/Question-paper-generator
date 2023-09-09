@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
+body{
+    margin: 0vw 0vw 0vw 0vw;
+    background-color: #fff7ef;
+}
+
+.hero{
+    background-color: #5f7ff5;
+    height: 10vw;
+    margin-top: 0vw;
+}
+
+.topBar{
+    display: flex;
+    border-bottom: 1px solid #fff7ef;
+    font-family: 'Comfortaa';
+    margin: 1vw 0vw 0vw 4vw;
+    padding: 0.5vw;
+    flex-direction: row;
+}
+
+.topBar a{
+    text-decoration: none;
+    font-family: 'Comfortaa';
+    font-size: 1vw;
+    color: #fff7ef;
+    margin: 1vw 1vw 0vw 1vw;
+    font-weight: 500;
+}
+
+
+.topBar .header{
+    font-family: 'Bungee';
+    font-size: 1.3vw;
+    color: #fff7ef;
+    font-weight: 800;
+}
