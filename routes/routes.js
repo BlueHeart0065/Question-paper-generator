@@ -37,6 +37,13 @@ router.get('/' , (req , res) => {
     })
 });
 
+router.get('/exam/:id' , (req , res) => {
+    const id = req.params.id;
+
+    res.render('exam' , {no : 1});
+
+});
+
 
 
 module.exports = router;

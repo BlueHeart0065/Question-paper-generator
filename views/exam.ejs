@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../exam.css">
+    <title>Exam</title>
+</head>
+<body>
+    <div class="topBar">
+        <p class="header">QuestionWizz</p>
+        <a href="/" style="margin-left: 50vw;"><p>Home</p></a>
+        <a href="/login"><p>Login</p></a>
+        <a href="/signup"><p>Signup</p></a>
+    </div>
+
+    <div class="sideBar">
+
+        <div class="boxes">
+            <% for(let c = 0 ; c < 50 ; c++){ %>
+                <div class="box">
+                    <%= no++ %>
+                </div>
+            <% } %>
+        </div>
+    </div>
+
+    <% for(let c = 0 ; c < 50 ; c++){ %>
+        <div class="question">
+
+        </div>
+    <% } %>
+</body>
+</html>
