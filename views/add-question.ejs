@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../add-question.css">
+    <title>Add Questions</title>
+</head>
+<body>
+    <div class="topBar">
+        <p class="header">QuestionWizz</p>
+        <a href="/" style="margin-left: 50vw;"><p>Home</p></a>
+        <a href="/login"><p>Login</p></a>
+        <a href="/signup"><p>Signup</p></a>
+    </div>
+
+    <% for(let question = questions[0].question_count ; question > 0 ; question--){ %>
+        <div class="Question">
+            <label for="question_input">Enter the question</label>
+            <input type="text" name="questionInput" id="question_input">
+            <label for="option1_input">Enter option number 1</label>
+            <input type="text" name="option1" id="option1_input">
+            <label for="option2_input">Enter option number 2</label>
+            <input type="text" name="option2" id="option2_input">
+            <label for="option3_input">Enter option number 3</label>
+            <input type="text" name="option3" id="option3_input">
+            <label for="option4_input">Enter option number 4</label>
+            <input type="text" name="option4" id="option4_input">
+            <label for="answer_input">Provide correct option number</label>
+            <input type="number" name="answer" id="answer_input">
+            <button>Submit</button>
+        </div>
+    <% } %>
+</body>
+</html>

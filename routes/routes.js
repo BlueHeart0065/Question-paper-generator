@@ -61,7 +61,7 @@ router.get('/exam/:id' , (req , res) => {
 });
 
 router.get('/create' , (req , res) => {
-    res.render('create-exam' , {questions})
+    res.render('create-exam')
 })
 
 router.post('/create' , (req , res) => {
@@ -74,18 +74,19 @@ router.post('/create' , (req , res) => {
         }
         else{
             console.log('paper inserted'.rainbow);
+            db.query(`CREATE TABLE ${mysql.escapeId(paperName)} (question_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, question_text BLOB NOT NULL ,option_1 BLOB NOT NULL , option_2 BLOB NOT NULL , option_3 BLOB NOT NULL , option_4 BLOB NOT NULL , answer INT NOT NULL)` , (error , reslt) => {
+                if(error){
+                    console.log('error in creating table'.rainbow , err)
+                }
+                else{
+                    console.log('table created'.rainbow);
+                    res.render('add-question' , {questions : results});
+                }
+            });
         }
     });
 
-    db.query(`CREATE TABLE ${mysql.escapeId(paperName)} (question_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, question_text BLOB NOT NULL ,option_1 BLOB NOT NULL , option_2 BLOB NOT NULL , option_3 BLOB NOT NULL , option_4 BLOB NOT NULL , answer INT NOT NULL)` , (err , results) => {
-        if(err){
-            console.log('error in creating table'.rainbow , err)
-        }
-        else{
-            console.log('table created'.rainbow);
-            res.send('Successfull!!');
-        }
-    });
+
 })
 
 
