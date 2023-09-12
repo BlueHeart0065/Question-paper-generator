@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../create-exam.css">
+    <title>Create Exam</title>
+</head>
+<body>
+    <div class="topBar">
+        <p class="header">QuestionWizz</p>
+        <a href="/" style="margin-left: 50vw;"><p>Home</p></a>
+        <a href="/login"><p>Login</p></a>
+        <a href="/signup"><p>Signup</p></a>
+    </div>
+
+    <form action="/create" method="post" class="table">
+        <label for="paper_name">Give your question paper a name : </label>
+        <input type="text" name="paperName" id="paper_name"><br>
+        <label for="question_count">How many questions would you like to add ? </label>
+        <input type="number" name="questionCount" id="question_count"><br>
+        <label for="difficulty">Enter the difficulty level of the question paper (easy , medium , hard)</label>
+        <input type="text" name="difficulty" id="difficulty"><br>
+        <label for="topics">Enter the topics whcich you want to include in the paper : </label>
+        <input type="text" name="topics" id="topics"><br>
+        <button>Submit</button>
+    </form>
+
+
+</body>
+</html>

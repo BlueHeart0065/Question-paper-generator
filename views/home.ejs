@@ -25,6 +25,15 @@
 
     </div>
     <div class="options">
+
+        <a href="/create">
+
+            <div class="option">
+                <p class="paperName">Create question paper</p>
+                <p class="paperDiff">Make your own question paper and add your question with answers</p>
+            </div>
+
+        </a>
         
         <% for(let paper of papers){ %>
             <a href="/exam/<%= paper.paper_id %>">

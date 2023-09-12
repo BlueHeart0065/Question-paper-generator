@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
+body{
+    margin: 0vw 0vw 0vw 0vw;
+    background-color: #fff7ef;
+}
+
+.topBar{
+    display: flex;
+    /* border-bottom: 1px solid #fff7ef; */
+    font-family: 'Comfortaa';
+    margin: 0vw auto 0vw auto;
+    flex-direction: row;
+    width: 100%;
+    background-color: #5f7ff5;
+}
+
+.topBar a{
+    text-decoration: none;
+    font-family: 'Comfortaa';
+    font-size: 1vw;
+    color: #fff7ef;
+    margin: 1.5vw 1vw 0vw 1vw;
+    font-weight: 500;
+}
+
+
+.topBar .header{
+    font-family: 'Bungee';
+    font-size: 1.3vw;
+    color: #d9ee5f;
+    font-weight: 800;
+    margin-left: 10vw;
+}
+
+.table{
+    font-family: 'Comfortaa';
+    font-size: 1vw;
+}
+
+.table label{
+    margin: 1vw 1vw 0vw 2vw;
+}
+
+.table input{
+    margin: 1vw 0vw 0vw 0vw;
+
+}
+
+.table button{
+    font-size: 1.3vw;
+    width: fit-content;
+    height: fit-content;
+    padding: 0.5vw;
+    margin: 2vw;
+}
