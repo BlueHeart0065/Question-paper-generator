@@ -65,8 +65,15 @@ body{
 
 .question{
     width: 71vw;
-    height: 30vw;
+    height: 25vw;
     background-color: rgb(205, 205, 205);
     margin: 1vw 0vw 0vw 27vw;
     border-radius: 30px;
 }
+
+.question_text{
+    font-family: 'Comfortaa';
+    font-size: 1.5vw;
+    font-weight: 900;
+}
+

@@ -39,8 +39,24 @@ router.get('/' , (req , res) => {
 
 router.get('/exam/:id' , (req , res) => {
     const id = req.params.id;
+    db.query('SELECT * FROM paper WHERE paper_id = ?' , [id] , (err , results) => {
+        if(err){
+            console.log('error in fetching paper name of id'.rainbow,id.rainbow , err);
+        }
+        else{
+            const paperName = results[0].paper_name;
 
-    res.render('exam' , {no : 1});
+            db.query(`SELECT * FROM ${mysql.escapeId(paperName)}`, (error , reslt) => {
+                if(error){
+                    console.log('error in fetching the paper and its questions table' , error);
+                }
+                else{
+                    // console.log('REACHED'.cyan);
+                    res.render('exam' , {questions : reslt});
+                }
+            })
+        }
+    })
 
 });
 
