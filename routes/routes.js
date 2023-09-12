@@ -61,28 +61,29 @@ router.get('/exam/:id' , (req , res) => {
 });
 
 router.get('/create' , (req , res) => {
-    res.render('create-exam')
+    res.render('create-exam' , {questions})
 })
 
 router.post('/create' , (req , res) => {
-    console.log(req.body);
     const {paperName  ,questionCount , difficulty , topics} = req.body;
 
-    db.query('INSERT INTO paper (papar_name , question_count , difficulty , question_topics) VALUES (? ,? , ? , ?)', [paperName , questionCount , difficulty , topics] , (err , results) => {
+    db.query('INSERT INTO paper (paper_name , question_count , difficulty , question_topics) VALUES (? ,? , ? , ?)', [paperName , questionCount , difficulty , topics] , (err , results) => {
         if(err){
             console.log('error in paper insertion'.rainbow , err);
+            return
         }
         else{
             console.log('paper inserted'.rainbow);
         }
     });
 
-    db.query(`CREATE TABLE ${mysql.escapeId(paperName)} (question_id INT NOT NULL AUTO_INCREMENT , question_text BLOB NOT NULL ,option_1 BLOB NOT NULL , option_2 BLOB NOT NULL , option_3 BLOB NOT NULL , option_4 BLOB NOT NULL , answer INT NOT NULL` , (err , results) => {
+    db.query(`CREATE TABLE ${mysql.escapeId(paperName)} (question_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, question_text BLOB NOT NULL ,option_1 BLOB NOT NULL , option_2 BLOB NOT NULL , option_3 BLOB NOT NULL , option_4 BLOB NOT NULL , answer INT NOT NULL)` , (err , results) => {
         if(err){
             console.log('error in creating table'.rainbow , err)
         }
         else{
             console.log('table created'.rainbow);
+            res.send('Successfull!!');
         }
     });
 })
