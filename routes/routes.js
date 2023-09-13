@@ -1,8 +1,16 @@
 const express = require('express');
 const mysql = require('mysql');
+const session = require('express-session');
+
 
 
 const router = express.Router();
+
+router.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: true,
+  }));
 
 
 const db = mysql.createConnection({
@@ -73,6 +81,9 @@ router.post('/create' , (req , res) => {
             return
         }
         else{
+            // const questions = results[0].question_count;
+            req.session.questionCount = questionCount;
+            req.session.paperName = paperName;
             console.log('paper inserted'.rainbow);
             db.query(`CREATE TABLE ${mysql.escapeId(paperName)} (question_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, question_text BLOB NOT NULL ,option_1 BLOB NOT NULL , option_2 BLOB NOT NULL , option_3 BLOB NOT NULL , option_4 BLOB NOT NULL , answer INT NOT NULL)` , (error , reslt) => {
                 if(error){
@@ -80,12 +91,39 @@ router.post('/create' , (req , res) => {
                 }
                 else{
                     console.log('table created'.rainbow);
-                    res.render('add-question' , {questions : results});
+                    res.redirect('/create/add');
+                    // res.render('add-question' , {questionCount});
                 }
             });
         }
     });
 
+})
+
+router.get('/create/add' , (req , res) => {
+    const questionCount = req.session.questionCount;
+    res.render('add-question' , {questionCount});
+});
+
+router.post('/create/add' , (req , res) => {
+
+    const {questionInput , option1 , option2 , option3 , option4 , answer} = req.body;
+
+    const count = req.session.questionCount;
+    const paperName = req.session.paperName;
+
+    for(let i = 0 ; i < count ; i++){
+        db.query(`INSERT INTO ${mysql.escapeId(paperName)} (question_text , option_1 , option_2 , option_3 , option_4 , answer) VALUES (? , ? , ? , ? , ? , ? )` , [questionInput[i] , option1[i] , option2[i] , option3[i] , option4[i] , answer[i]] , (err , results) => {
+            if(err){
+                console.log('error in inserting questions'.rainbow , err);
+            }
+            else{
+                console.log('inserted questions successfully'.rainbow);
+            }
+        });
+    }
+
+    res.redirect('/');
 
 })
 

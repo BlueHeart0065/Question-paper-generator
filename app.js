@@ -4,6 +4,7 @@ const mysql = require('mysql');
 const colors = require('colors');
 const path = require('path');
 const router = require('./routes/routes');
+const session = require('express-session');
 
 const app = express();
 const port = 3000;

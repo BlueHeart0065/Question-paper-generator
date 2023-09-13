@@ -34,3 +34,33 @@ body{
     font-weight: 800;
     margin-left: 10vw;
 }
+
+.Question{
+    font-family: 'Comfortaa';
+    font-size: 1vw;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #5f7ff5;
+    margin: 1vw 0vw 1vw 2vw;
+}
+
+.Question label {
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
+
+.Question input{
+    width: 50vw;
+    height: 3vw;
+    margin-bottom: 2vw;
+}
+
+.submitButton{
+    font-family: 'Comfortaa';
+    font-size: 1.2vw;
+    border: none;
+    background-color: #d9ee5f;
+    padding: 0.5vw;
+    cursor: pointer;
+    margin: 2vw;
+}
