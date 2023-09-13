@@ -92,3 +92,17 @@ body{
     margin-bottom:2vw ;
 }
 
+input{
+    width: 1.5vw;
+    height: 1.5vw;
+    margin: 0vw 0vw 0vw -2vw;
+}
+
+ul{
+    list-style: none;
+}
+
+.question label{
+    margin: 0vw 0vw 0vw 1vw;
+}
+
