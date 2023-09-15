@@ -60,7 +60,7 @@ router.get('/exam/:id' , (req , res) => {
                 }
                 else{
                     // console.log('REACHED'.cyan);
-                    res.render('exam' , {questions : reslt});
+                    res.render('exam' , {questions : reslt , paperId : id});
                 }
             })
         }
@@ -125,6 +125,12 @@ router.post('/create/add' , (req , res) => {
 
     res.redirect('/');
 
+})
+
+router.post('/exam/submit/:id' , (req , res) => {
+    const id = req.params.id;
+
+    console.log(req.body);
 })
 
 

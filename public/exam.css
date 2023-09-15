@@ -100,9 +100,22 @@ input{
 
 ul{
     list-style: none;
+    font-family: 'Comfortaa';
+    font-size: 1vw;
+}
+
+li{
+    margin: 0vw 0vw 1vw 2vw;
 }
 
 .question label{
     margin: 0vw 0vw 0vw 1vw;
+}
+
+.submit{
+    margin: 1vw 0vw 2vw 28vw;
+    font-family: 'Comfortaa';
+    font-size: 1vw;
+    padding: 0.5vw;
 }
 
