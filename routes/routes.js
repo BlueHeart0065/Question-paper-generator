@@ -131,6 +131,8 @@ router.post('/exam/submit/:id' , (req , res) => {
     const id = req.params.id;
     const {opt1 , opt2 , opt3 , opt4} = req.body;
     console.log(req.body);
+    
+    
 })
 
 
