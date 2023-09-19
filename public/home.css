@@ -122,6 +122,7 @@ body{
     width: 100%;
     background-color: #fff7ef;
     font-family: 'Comfortaa';
+    border-bottom: 1px solid gray;
 }
 
 .display2 h3{
@@ -131,17 +132,42 @@ body{
     color: #3a3a3a;
     letter-spacing: 3px;
     text-shadow: 0px 0px 20px grey;
-    margin: 5vw 0vw 0vw 40vw;
+    margin: 5vw 0vw 0vw 45vw;
+    width: 50vw;
+    text-align: right;
+}
+
+.display2 p{
+    text-align: right;
+    width: 60vw;
+    letter-spacing: 3px;
+    font-family: 'Comfortaa';
+    font-size: 1.3vw;
+    color: #3a3a3a;
+    margin: 5vw 0vw 0vw 35vw;
 
 }
 
+.display2 button{
+    border: none;
+    font-family: 'Comfortaa';
+    font-size: 1vw;
+    letter-spacing: 2px;
+    width: fit-content;
+    height: fit-content;
+    padding: 1vw 2vw 1vw 2vw;
+    text-align: center;
+    border-radius: 10px;
+    margin: 2vw 0vw 0vw 60vw; 
+    cursor: pointer;
+}
 
 .options{
     display: flex;
     flex-wrap: wrap;
     width: 76vw;
     /* border: 1px solid black; */
-    margin: 2vw auto 10vw auto;
+    margin: 20vw auto 10vw auto;
     height: fit-content;
 }
 
